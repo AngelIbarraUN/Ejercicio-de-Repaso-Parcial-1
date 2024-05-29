@@ -1,0 +1,59 @@
+@model IEnumerable<TeacherModel> ;
+
+@{
+    ViewData["Title"] = "Listado de Profesores";
+
+}
+
+<div class="text-center">
+
+<h2>@DateTime.Now</h2>
+
+<h1 class="display-2">Listado de Maestros</h1>
+<a asp-controller="Teacher" asp-action="TeacherAdd"
+class="btn btn-primary mb-3">
+Agregar Profesor
+
+</a>
+</div>
+<table class="table">  
+    <thead>
+<tr>
+    <th>Acciones </th>
+    <th>Nombre</th>
+    <th>Carrera</th>
+     <th>Matrícula</th>
+      <th>Edad</th>
+       <th>Sexo</th>
+</tr>
+
+    </thead>
+<tbody>
+@foreach(var teacher in Model)
+{
+    <tr>
+        <td>
+<a class="btn btn-primary" asp-controller="Teacher" asp-action="TeacherEdit" asp-route-id="@teacher.Id">Editar</a>
+<a class="btn btn-danger" asp-controller="Teacher" asp-action="TeacherShowToDeleted" asp-route-id="@teacher.Id">Borrar</a>
+        </td>
+        <td>
+            @teacher.Nombre
+        </td>
+        <td>@teacher.Carrera
+        </td>
+          <td>@teacher.Matricula
+        </td>
+        <td>@teacher.Edad
+        </td>
+        <td>@teacher.Sexo
+        </td>
+    </tr>
+}
+</tbody>
+
+<tfoot>
+
+</tfoot>
+</table>
+<center><img src="~/img/maestros.jpg"></center> 
+

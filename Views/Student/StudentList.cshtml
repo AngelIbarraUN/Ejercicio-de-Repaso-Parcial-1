@@ -1,0 +1,60 @@
+@model IEnumerable<StudentModel>;
+
+@{
+    ViewData["Title"] = "Listado de Alumnos";
+    DateTime fechaInscripcion= new DateTime(2024,05,28);    
+}
+<div class="text-center">
+<h2>@DateTime.Now</h2>
+<h1 class ="display-2">Listado de Alumnos</h1>
+
+<a asp-action="StudentAdd" asp-controller="Student"
+class="btn btn-primary mb-3">
+Agregar Alumno
+</a>
+</div>
+<table class="table">
+<thead>
+<tr>
+    <th>Acciones</th>
+      <th>Nombre</th>
+        <th>Carrera</th>
+          <th>Matrícula</th>
+            <th>Edad</th>
+              <th>Sexo</th>
+</tr>
+</thead>
+<tbody>
+@foreach(var stud in Model)
+{
+    <tr>
+<td>
+    <a class="btn btn-primary" asp-controller="Student" asp-action="StudentShowAndEdit">Editar</a>
+    <a class="btn btn-danger" asp-controller="Student" asp-action="StudentShowToDeleted">Borrar</a>
+</td>
+<td>
+    @stud.Nombre
+</td>
+<td>
+    @stud.Carrera
+</td>
+<td>
+    @stud.Matricula
+</td>
+<td>
+    @stud.Edad
+</td>
+<td>
+    @stud.Sexo
+</td>
+    </tr>
+}
+
+</tbody>
+<tfoot>
+
+</tfoot>
+
+</table>
+<center><img src="~/img/Alumnos.jpg"></center> 
+</div>

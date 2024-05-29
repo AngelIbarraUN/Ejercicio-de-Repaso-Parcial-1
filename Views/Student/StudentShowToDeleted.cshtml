@@ -1,0 +1,12 @@
+@{
+    ViewData["Title"] = "Borrar al Estudiante";
+}
+
+<h3 class="mb-3">¿Estas seguro de que desea borrar al estudiante?</h3>
+
+<form asp-controller="Student" asp-action="StudentDeleted">
+
+<button type="submit" class="btn btn-danger">Confirmar</button>
+<a class="btn btn-secundary" asp-controller="Student" asp-action="StudentList">Regresar</a>
+
+</form>

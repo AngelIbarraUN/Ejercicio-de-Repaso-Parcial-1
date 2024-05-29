@@ -1,0 +1,41 @@
+
+@model TeacherModel;
+@{
+    ViewData["Title"] = "Editar profesor";
+}
+ 
+  <div class="text-center">
+<h1 class="display-2">Editar nombre de profesor: @Model.Nombre</h1>
+</div>
+<div asp-validation-summary="All" class="text-danger"></div>
+
+ <form asp-controller="Teacher" asp-action="TeacherEdit">
+
+
+ <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Escriba el Nombre:" />
+    </div>
+     <div class="mb-3">
+        <label for="carrera" class="form-label">Carrera</label>
+        <input type="text" class="form-control" id="carrera" name="carrera" placeholder="Escriba la Carrera:" />
+    </div>
+     <div class="mb-3">
+        <label for="Matrícula" class="form-label">Matrícula</label>
+        <input type="text" class="form-control" id="matricula" name="matricula" placeholder="Escriba la Matrícula:" />
+    </div>
+     <div class="mb-3">
+        <label for="sexo" class="form-label">Sexo</label>
+        <input type="text" class="form-control" id="sexo" name="sexo" placeholder="Escriba el Sexo:" />
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+<a asp-controller="Teacher" asp-action="TeacherList"
+class="btn btn-secundary mb-3">
+Regresar
+
+</a>
+
+
+
+    <button type="submit" class="btn btn-secundary">Cancelar</button>
+ </form>

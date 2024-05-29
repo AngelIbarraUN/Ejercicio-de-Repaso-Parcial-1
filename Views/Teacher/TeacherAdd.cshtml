@@ -1,0 +1,44 @@
+@model TeacherModel;
+@{
+    ViewData["Title"] = "Alta de Profesores";
+}
+ <div class="text-center">
+<h1 class="display-2">Alta de Profesores</h1>
+</div>
+<div asp-validation-summary="All" class="text-danger"></div>
+
+
+ <form asp-controller="Teacher" asp-action="TeacherAdd">
+
+
+ <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Escriba el nombre del profesor:" />
+    </div>
+    <div class="mb-3">
+        <label for="edad" class="form-label">Edad</label>
+        <input type="text" class="form-control" id="edad" name="edad" placeholder="Escriba la edad:" />
+    </div>
+    <div class="mb-3">
+        <label for="matricula" class="form-label">Matrícula</label>
+        <input type="text" class="form-control" id="matricula" name="matricula" placeholder="Escriba la matrícula:" />
+    </div>
+    <div class="mb-3">
+        <label for="carrera" class="form-label">Carrera</label>
+        <input type="text" class="form-control" id="carrera" name="carrera" placeholder="Escriba la carrera:" />
+    </div>
+    <div class="mb-3">
+        <label for="sexo" class="form-label">Sexo</label>
+        <input type="text" class="form-control" id="sexo" name="sexo" placeholder="Escriba el sexo:" />
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+<a asp-controller="Teacher" asp-action="TeacherList"
+class="btn btn-secundary mb-3">
+Regresar
+
+</a>
+
+
+
+    <button type="submit" class="btn btn-secundary">Cancelar</button>
+ </form>

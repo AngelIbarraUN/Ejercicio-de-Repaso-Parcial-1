@@ -1,0 +1,29 @@
+@{
+    ViewData["Title"] = "Editar al Estudiante";
+}
+ <form asp-controller="Student" asp-action="StudentEdit">
+
+
+ <div class="mb-3">
+        <label for="matricula" class="form-label">Matrícula</label>
+        <input type="text" class="form-control" id="matricula" name="matricula" placeholder="Escriba la Matrícula:" />
+    </div>
+     <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Escriba el Nombre del estudiante:" />
+    </div>
+     <div class="mb-3">
+        <label for="carrera" class="form-label">Nombre</label>
+        <input type="text" class="form-control" id="carrera" name="Carrera" placeholder="Escriba la Carrera:" />
+    </div>
+     <div class="mb-3">
+        <label for="edad" class="form-label">Edad</label>
+        <input type="text" class="form-control" id="edad" name="edad" placeholder="Escriba la Edad:" />
+    </div>
+     <div class="mb-3">
+        <label for="sexo" class="form-label">Sexo</label>
+        <input type="text" class="form-control" id="sexo" name="sexo" placeholder="Escriba si es hombre o mujer:" />
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a class="btn btn-secundary" asp-controller="Student" asp-action="StudentList">Regresar</a>
+ </form>
